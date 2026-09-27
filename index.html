@@ -405,25 +405,26 @@ const PLAN_IMG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA1UAAAUACAIAAAAg
 const palette = ["#b98a52","#7c8a6e","#8a6f83","#4f7d8a","#a45c48","#6c7a8f","#8a7a4f","#5c6b4f","#7a5240"];
 
 const projects = [
-  {id:"bedroom", cat:"Bedroom", title:"Between Waking and Rest", tag:"Master Suite",
+  {id:"cafe", cat:"Cafe", title:"The Red Room Café", tag:"Cafe Interior", location:"—",
     hero:"assets/project-1/photo_1_2026-09-27_15-54-37.jpg",
     images:[
-      {src:"assets/project-1/photo_1_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 01", wide:true},
-      {src:"assets/project-1/photo_2_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 02", wide:false},
-      {src:"assets/project-1/photo_3_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 03", wide:false},
-      {src:"assets/project-1/photo_4_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 04", wide:false},
-      {src:"assets/project-1/photo_5_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 05", wide:false},
-      {src:"assets/project-1/photo_6_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 06", wide:false},
-      {src:"assets/project-1/photo_7_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 07", wide:false},
-      {src:"assets/project-1/photo_8_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 08", wide:false},
-      {src:"assets/project-1/photo_9_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 09", wide:false},
-      {src:"assets/project-1/photo_10_2026-09-27_15-54-37.jpg", cap:"Bedroom — View 10", wide:false}
+      {src:"assets/project-1/photo_1_2026-09-27_15-54-37.jpg", cap:"Cafe — View 01", wide:true},
+      {src:"assets/project-1/photo_2_2026-09-27_15-54-37.jpg", cap:"Cafe — View 02", wide:false},
+      {src:"assets/project-1/photo_3_2026-09-27_15-54-37.jpg", cap:"Cafe — View 03", wide:false},
+      {src:"assets/project-1/photo_4_2026-09-27_15-54-37.jpg", cap:"Cafe — View 04", wide:false},
+      {src:"assets/project-1/photo_5_2026-09-27_15-54-37.jpg", cap:"Cafe — View 05", wide:false},
+      {src:"assets/project-1/photo_6_2026-09-27_15-54-37.jpg", cap:"Cafe — View 06", wide:false},
+      {src:"assets/project-1/photo_7_2026-09-27_15-54-37.jpg", cap:"Cafe — View 07", wide:false},
+      {src:"assets/project-1/photo_8_2026-09-27_15-54-37.jpg", cap:"Cafe — View 08", wide:false},
+      {src:"assets/project-1/photo_9_2026-09-27_15-54-37.jpg", cap:"Cafe — View 09", wide:false},
+      {src:"assets/project-1/photo_10_2026-09-27_15-54-37.jpg", cap:"Cafe — View 10", wide:false}
     ],
-    intro:"The plan holds three moods under one roof — sleep, pause, and ritual — tied together by a single skylight, so the room never needs artificial cues to feel awake or ready to rest.",
+    type:"Hospitality Interior",
+    intro:"A warmly lit cafe centered on a red mosaic feature wall, with intimate banquette seating, patterned tile, and small tables arranged for conversation.",
     sections:[
-      {n:"01", h:"Layout", p:"Bed and lounge chair share one line of sight toward the window; the wardrobe and ensuite fall away behind a chamfered wall, so nothing intrudes on the view."},
-      {n:"02", h:"Materials", p:"Herringbone oak underfoot, a chequerboard marble inlay by the vanity, brushed brass fittings — three materials, repeated everywhere else in the suite."},
-      {n:"03", h:"Detail", p:"A single pendant over the reading corner does the work of three fixtures; every other surface stays lit, not lit up."}
+      {n:"01", h:"A Bold First Impression", p:"A red mosaic wall and sculptural brass pendants establish the cafe's identity, balanced by dark wood and low, warm lighting."},
+      {n:"02", h:"Dining &amp; Conversation", p:"A long upholstered banquette anchors the room while compact tables and cane-backed chairs create flexible seating throughout."},
+      {n:"03", h:"Layered Materials", p:"Patterned floor tile, polished tabletops, textured upholstery, and reflective mosaic bring depth and warmth to the dining space."}
     ]},
   {id:"bathroom", cat:"Bathroom", title:"Sculpted in Stone", tag:"Ensuite Bath",
     intro:"Wet and dry share one room without sharing one mood — a book-matched marble wall separates them without a single door.",
@@ -486,7 +487,7 @@ const projects = [
 /* every project gets a gallery slot set — captions are generic until real photos are supplied */
 const defaultCaptions = ["Overview","Lounge / Seating","Materials Detail","Lighting Study","Evening View","Texture Close-up"];
 const areaByCat = {Bedroom:"42 m²",Bathroom:"18 m²",Majlis:"55 m²",Reception:"30 m²",Restaurant:"180 m²",Gym:"26 m²",Gaming:"20 m²",Discovery:"24 m²",Kitchen:"34 m²"};
-const typeByCat = {Restaurant:"Hospitality Interior",Reception:"Commercial Interior"};
+const typeByCat = {Cafe:"Hospitality Interior",Restaurant:"Hospitality Interior",Reception:"Commercial Interior"};
 projects.forEach((p,i)=>{
   if(!p.images){
     p.images = defaultCaptions.map((cap,i)=>({src:null, cap, wide:i===0}));
@@ -619,7 +620,7 @@ document.getElementById("backBtn").addEventListener("click", ()=>{ history.pushS
 
 function routeFromHash(){
   const m = location.hash.match(/^#\/project\/([\w-]+)/);
-  if(m){ openDetail(m[1]); } else { closeDetail(); }
+  if(m){ openDetail(m[1] === "bedroom" ? "cafe" : m[1]); } else { closeDetail(); }
 }
 window.addEventListener("hashchange", routeFromHash);
 routeFromHash();
