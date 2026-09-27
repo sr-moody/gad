@@ -62,11 +62,12 @@ h1{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(2.2rem
 
 .proj-list{max-width:1300px; margin:0 auto; padding:4vh 6vw 12vh;}
 .proj-row{display:grid; grid-template-columns:52px 260px 1fr auto; align-items:center; gap:32px;
-  padding:34px 0; border-top:1px solid var(--line); text-decoration:none; color:inherit;
-  opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);}
+  padding:34px 26px; margin:0 -26px; border-top:1px solid var(--line); text-decoration:none; color:inherit; border-radius:3px;
+  opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), background .4s ease;}
+.proj-row:hover{background:color-mix(in srgb, var(--gold) 5%, transparent);}
 .proj-list a.proj-row:last-child{border-bottom:1px solid var(--line);}
 .proj-row.is-visible{opacity:1; transform:translateY(0);}
-.proj-num{font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gold); transition:color .3s ease;}
+.proj-num{font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gold); transition:color .3s ease; font-variant-numeric:tabular-nums;}
 .proj-thumb{width:260px; aspect-ratio:4/3; overflow:hidden; background:var(--panel); border:1px solid var(--line); flex-shrink:0;
   clip-path:inset(0 0 100% 0); transition:clip-path 1s cubic-bezier(.2,.7,.2,1) .05s;}
 .proj-row.is-visible .proj-thumb{clip-path:inset(0 0 0% 0);}
@@ -196,7 +197,10 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
   padding:6vh 5vw; backdrop-filter:blur(6px);}
 #lightbox.open{display:flex;}
 #lightbox figure{margin:0; max-width:1100px; max-height:86vh; text-align:center;}
-#lightbox img{max-width:100%; max-height:76vh; object-fit:contain; border:1px solid rgba(255,255,255,.1);}
+#lbMedia{width:min(70vw,900px); max-height:76vh; display:flex; align-items:center; justify-content:center;}
+#lightbox img{display:block; max-width:100%; max-height:76vh; object-fit:contain; border:1px solid rgba(255,255,255,.1);}
+.lb-placeholder{width:min(70vw,640px); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center;
+  background:#1e1a15; border:1px solid rgba(255,255,255,.12); font-family:'Playfair Display',serif; font-size:3rem; color:#8a8271;}
 #lightbox figcaption{margin-top:14px; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#cfc8b8;}
 .lb-btn{position:fixed; top:50%; transform:translateY(-50%); background:none; border:none; color:#f2ede3; font-size:2rem; cursor:pointer; padding:14px; opacity:.75;}
 .lb-btn:hover{opacity:1;}
@@ -344,11 +348,11 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
   <div id="detailContent"></div>
 </div>
 
-
+<div id="lightbox">
   <button id="lbClose">✕</button>
   <span id="lbCount"></span>
   <button class="lb-btn" id="lbPrev">‹</button>
-  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <figure><div id="lbMedia"></div><figcaption id="lbCap"></figcaption></figure>
   <button class="lb-btn" id="lbNext">›</button>
 </div>
 
@@ -534,6 +538,7 @@ function renderDetail(id){
     return `<div class="g-item ${im.wide?'wide':''}" data-i="${i}">${inner}<span class="cap">${im.cap}</span></div>`;
   }).join("");
   currentGallery = p.images;
+  currentProject = p;
   gGrid.querySelectorAll(".g-item").forEach(el=>{
     el.addEventListener("click", ()=> openLightbox(parseInt(el.dataset.i)));
   });
@@ -588,30 +593,37 @@ detail.addEventListener("scroll", ()=>{
 }, {passive:true});
 
 /* lightbox */
-let currentGallery = [], lbIndex = 0;
+let currentGallery = [], lbIndex = 0, currentProject = null;
 const lightbox = document.getElementById("lightbox");
-const lbImg = document.getElementById("lbImg");
+const lbMedia = document.getElementById("lbMedia");
 const lbCap = document.getElementById("lbCap");
 const lbCount = document.getElementById("lbCount");
 function openLightbox(i){
-  const items = currentGallery.filter(im=>im.src);
-  const map = currentGallery.map((im,idx)=>idx).filter(idx=>currentGallery[idx].src);
-  if(!currentGallery[i] || !currentGallery[i].src) return; // no full photo yet
+  if(!currentGallery[i]) return;
   lbIndex = i;
   showLB();
   lightbox.classList.add("open");
 }
 function showLB(){
   const im = currentGallery[lbIndex];
-  lbImg.src = im.src; lbImg.alt = im.cap; lbCap.textContent = im.cap;
+  lbMedia.replaceChildren();
+  if(im.src){
+    const image = document.createElement("img");
+    image.src = im.src;
+    image.alt = im.cap;
+    lbMedia.append(image);
+  } else {
+    const placeholder = document.createElement("div");
+    placeholder.className = "lb-placeholder";
+    placeholder.textContent = currentProject ? currentProject.cat[0] : "—";
+    lbMedia.append(placeholder);
+  }
+  lbCap.textContent = im.cap;
   lbCount.textContent = (lbIndex+1) + " / " + currentGallery.length;
 }
 function stepLB(dir){
-  let n = lbIndex;
-  for(let k=0;k<currentGallery.length;k++){
-    n = (n + dir + currentGallery.length) % currentGallery.length;
-    if(currentGallery[n].src){ lbIndex = n; showLB(); return; }
-  }
+  lbIndex = (lbIndex + dir + currentGallery.length) % currentGallery.length;
+  showLB();
 }
 document.getElementById("lbClose").addEventListener("click", ()=>lightbox.classList.remove("open"));
 document.getElementById("lbPrev").addEventListener("click", ()=>stepLB(-1));
