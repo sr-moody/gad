@@ -3,20 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>GAD — Interior Design Portfolio</title>
+<title>GAD — Interior Design &amp; Architecture Portfolio</title>
+<meta name="description" content="GAD is an interior designer and interior architect working across residential, hospitality and commercial interiors — spatial planning, materiality and visualization, from concept to technical resolution. Based in Cairo &amp; Riyadh.">
+<meta name="keywords" content="interior design, interior architecture, GAD, residential interior design, hospitality interior design, commercial interior design, Cairo, Riyadh, space planning, 3D visualization">
+<meta name="robots" content="index, follow">
+<meta name="author" content="GAD">
+<link rel="canonical" href="https://gad-sigma.vercel.app/">
+<meta name="theme-color" content="#161310">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23161310'/%3E%3Ctext x='50' y='64' font-family='Georgia,serif' font-size='46' fill='%23c48a4a' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GAD — Interior Design">
+<meta property="og:title" content="GAD — Interior Design &amp; Architecture Portfolio">
+<meta property="og:description" content="Residential, hospitality and commercial interiors — spatial thinking, materiality and visual storytelling, from concept to technical resolution.">
+<meta property="og:url" content="https://gad-sigma.vercel.app/">
+<meta property="og:image" content="https://gad-sigma.vercel.app/assets/project-1/photo_1_2026-09-27_15-54-37.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GAD — Interior Design &amp; Architecture Portfolio">
+<meta name="twitter:description" content="Residential, hospitality and commercial interiors — spatial thinking, materiality and visual storytelling.">
+<meta name="twitter:image" content="https://gad-sigma.vercel.app/assets/project-1/photo_1_2026-09-27_15-54-37.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"GAD — Interior Design",
+ "description":"Interior design and interior architecture across residential, hospitality and commercial projects.",
+ "areaServed":["Cairo","Riyadh"],"url":"https://gad-sigma.vercel.app/","email":"hello@gad.design",
+ "serviceType":["Interior Architecture","Space Planning","Design Development","Technical Design","3D Visualization"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#161310; --bg-2:#1e1a15; --panel:#211c17;
+  --bg:#18130e; --bg-2:#221b13; --panel:#261e15;
   --ink:#f4efe4; --ink-dim:#c3bba8; --ink-faint:#8a8271;
-  --gold:#c48a4a; --gold-2:#b5522c; --line:rgba(244,239,228,0.12);
+  --gold:#caa06a; --gold-2:#b5522c; --line:rgba(244,239,228,0.12);
   box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth; scroll-padding-top:calc(76px + env(safe-area-inset-top,0px)); overflow-x:hidden; width:100%;}
-body{margin:0; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-weight:300; overflow-x:hidden; position:relative;}
+html{scroll-behavior:smooth; scroll-padding-top:calc(76px + env(safe-area-inset-top,0px)); }
+body{margin:0; background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; font-weight:300; overflow-x:clip; position:relative;}
 img{max-width:100%;}
 a{color:inherit;}
 ::selection{background:var(--gold); color:#fff;}
@@ -60,35 +83,6 @@ h1{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(2.2rem
 .section-head h2{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(1.6rem,3.4vw,2.3rem); margin:0;}
 .section-head span{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint);}
 
-.proj-list{max-width:1300px; margin:0 auto; padding:4vh 6vw 12vh;}
-.proj-row{display:grid; grid-template-columns:52px 260px 1fr auto; align-items:center; gap:32px;
-  padding:34px 26px; margin:0 -26px; border-top:1px solid var(--line); text-decoration:none; color:inherit; border-radius:3px;
-  opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1), background .4s ease;}
-.proj-row:hover{background:color-mix(in srgb, var(--gold) 5%, transparent);}
-.proj-list a.proj-row:last-child{border-bottom:1px solid var(--line);}
-.proj-row.is-visible{opacity:1; transform:translateY(0);}
-.proj-num{font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--gold); transition:color .3s ease; font-variant-numeric:tabular-nums;}
-.proj-thumb{width:260px; aspect-ratio:4/3; overflow:hidden; background:var(--panel); border:1px solid var(--line); flex-shrink:0;
-  clip-path:inset(0 0 100% 0); transition:clip-path 1s cubic-bezier(.2,.7,.2,1) .05s;}
-.proj-row.is-visible .proj-thumb{clip-path:inset(0 0 0% 0);}
-.proj-thumb img{width:100%; height:100%; object-fit:cover; transform:scale(1.06); transition:transform .6s ease;}
-.proj-row:hover .proj-thumb img{transform:scale(1.14);}
-.proj-thumb .mono{width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:2.4rem; opacity:.5;}
-.proj-info h3{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(1.2rem,2.6vw,1.7rem); margin:0 0 8px; letter-spacing:-.01em;}
-.proj-info p{margin:0; font-size:12.5px; letter-spacing:.05em; color:var(--ink-faint); font-weight:300;}
-.proj-link{display:flex; align-items:center; gap:8px; font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-dim);
-  white-space:nowrap; transition:color .3s ease;}
-.proj-link i{font-style:normal; transition:transform .3s ease;}
-.proj-row:hover .proj-link{color:var(--gold);}
-.proj-row:hover .proj-link i{transform:translate(3px,-3px);}
-.proj-row:hover .proj-num{color:var(--ink);}
-@media(max-width:900px){ .proj-row{grid-template-columns:44px 180px 1fr; gap:20px;} .proj-link{display:none;} }
-@media(max-width:640px){
-  .proj-row{grid-template-columns:1fr; gap:16px; padding:26px 0;}
-  .proj-thumb{width:100%; aspect-ratio:16/10; order:-1;}
-  .proj-link{display:flex; margin-top:2px;}
-}
-
 /* HOMEPAGE CONTENT SECTIONS — Approach / About / Services / Process / Contact */
 .page-section{border-top:1px solid var(--line); padding:12vh 6vw; scroll-margin-top:76px;}
 .page-section .inner{max-width:820px; margin:0 auto; opacity:0; transform:translateY(26px);
@@ -115,22 +109,11 @@ h1{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(2.2rem
 .card-sub{font-size:11px; color:var(--ink-faint); margin:4px 0 0; font-weight:300;}
 
 /* FOOTER */
-footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid; grid-template-columns:1fr; gap:38px; max-width:1500px; margin:0 auto;}
-@media(min-width:720px){ footer.site{grid-template-columns:1.4fr 1fr 1fr;} }
-.f-col{display:flex; flex-direction:column; gap:10px;}
-.f-col .mark{color:var(--gold); margin-bottom:6px;}
-.f-col p{font-size:13px; line-height:1.7; color:var(--ink-faint); max-width:32ch; margin:0;}
-.f-head{font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:4px;}
-.f-col a{font-size:13.5px; color:var(--ink-dim); text-decoration:none; transition:color .25s ease;}
-.f-col a:hover{color:var(--gold);}
-.f-muted{font-size:12px; color:var(--ink-faint);}
-.f-bottom{grid-column:1/-1; border-top:1px solid var(--line); margin-top:8px; padding-top:22px; display:flex; justify-content:space-between;
-  flex-wrap:wrap; gap:10px; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint);}
 
 /* DETAIL / ABOUT OVERLAY */
-#detail, #about{position:fixed; inset:0; z-index:200; background:var(--bg); overflow-y:auto; -webkit-overflow-scrolling:touch;
+#detail{position:fixed; inset:0; z-index:200; background:var(--bg); overflow-y:auto; -webkit-overflow-scrolling:touch;
   transform:translateY(100%); opacity:0; transition:transform .55s cubic-bezier(.2,.7,.2,1), opacity .5s ease; pointer-events:none;}
-#detail.open, #about.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+#detail.open{transform:translateY(0); opacity:1; pointer-events:auto;}
 .d-nav{position:sticky; top:0; z-index:5; display:flex; justify-content:space-between; align-items:center;
   padding:calc(18px + env(safe-area-inset-top,0px)) 6vw 18px; background:color-mix(in srgb, var(--bg) 85%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
 .d-back{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-dim); text-decoration:none; display:flex; gap:8px; background:none; border:none; cursor:pointer; font-family:inherit;}
@@ -162,6 +145,21 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
 .d-img img{width:100%; height:100%; object-fit:cover; display:block;}
 .d-img .ph{width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:2.2rem; opacity:.4;}
 .d-cap{margin-top:12px; font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-faint); max-width:640px;}
+.d-spread{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);}
+.d-spread.is-visible{opacity:1; transform:translateY(0);}
+.d-spread .d-cap{text-align:center; margin-top:16px;}
+.spread-duo,.spread-trio{display:grid; gap:14px; max-width:1200px; margin:0 auto;}
+.spread-duo{grid-template-columns:1fr 1fr;}
+.spread-trio{grid-template-columns:repeat(3,1fr);}
+.sp-tile{overflow:hidden; border:1px solid var(--line); background:var(--bg-2); aspect-ratio:4/5;}
+.spread-trio .sp-tile{aspect-ratio:3/4;}
+.sp-tile img{width:100%; height:100%; object-fit:cover; transform:scale(1.04); transition:transform .6s ease;}
+.sp-tile:hover img{transform:scale(1.1);}
+@media(max-width:640px){
+  .spread-duo{grid-template-columns:1fr 1fr; gap:8px;}
+  .spread-trio{grid-template-columns:1fr 1fr; gap:8px;}
+  .spread-trio .sp-tile:last-child{grid-column:1/-1; aspect-ratio:16/10;}
+}
 .d-next{display:block; border-top:1px solid var(--line); padding:8vh 6vw; max-width:1400px; margin:0 auto;}
 .d-next span{font-size:11px; letter-spacing:.25em; text-transform:uppercase; color:var(--ink-faint);}
 .d-next h3{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(1.6rem,4vw,2.6rem); margin:12px 0 0;}
@@ -178,12 +176,6 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
   .brand small{font-size:8px; letter-spacing:.18em;}
   .nav-links{gap:12px; font-size:9px; letter-spacing:.1em;}
   .section-head{padding:52px 5vw 0; gap:12px;}
-  .proj-list{padding:28px 5vw 64px;}
-  .proj-row{grid-template-columns:minmax(0,1fr); gap:12px; padding:22px 14px; margin:0 -14px;}
-  .proj-thumb{width:100%; aspect-ratio:16/10; order:-1;}
-  .proj-info h3{font-size:1.25rem; line-height:1.25;}
-  .proj-info p{font-size:12px;}
-  .proj-link{display:flex; margin-top:4px;}
   .d-nav{gap:10px; padding:calc(12px + env(safe-area-inset-top,0px)) 5vw 12px;}
   .d-back{font-size:9px; letter-spacing:.1em; white-space:nowrap;}
   #dCount{font-size:10px !important; letter-spacing:.14em !important; white-space:nowrap;}
@@ -274,6 +266,226 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
 .hero-btn:hover span{transform:translateY(3px);}
 
 @media (prefers-reduced-motion: reduce){*{animation-duration:.001s !important; transition-duration:.001s !important;}}
+
+/* ===== BRAND LAYER ===== */
+.hero{min-height:88vh; overflow:hidden;}
+.hero::before{z-index:1;}
+.hero-bg{position:absolute; inset:0; z-index:0;
+  background:linear-gradient(180deg, rgba(22,19,16,.78) 0%, rgba(22,19,16,.55) 42%, var(--bg) 100%),
+             url("assets/project-1/photo_1_2026-09-27_15-54-37.jpg") center/cover no-repeat;
+  transform:scale(1.06); animation:heroZoom 2.4s cubic-bezier(.2,.7,.2,1) forwards;}
+@keyframes heroZoom{to{transform:scale(1);}}
+.hero-mark{position:absolute; left:50%; bottom:-.16em; transform:translateX(-50%); z-index:1; pointer-events:none; user-select:none;
+  font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(9rem,34vw,28rem); line-height:1; letter-spacing:.04em; white-space:nowrap;
+  color:transparent; -webkit-text-stroke:1px color-mix(in srgb, var(--gold) 34%, transparent);}
+.hero-inner{z-index:2;}
+.hero-btn{background:var(--gold); border-color:var(--gold); color:#1a140d; font-weight:500;}
+.hero-btn:hover{background:transparent; color:var(--ink); border-color:var(--gold);}
+.hero-meta{position:relative; z-index:2; margin-top:56px; display:flex; gap:10px 34px; flex-wrap:wrap; justify-content:center;
+  font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-faint); opacity:0; animation:fadeUp .9s ease forwards .8s;}
+.hero-meta b{color:var(--gold); font-weight:400;}
+.sec-kicker::before{content:""; display:inline-block; width:28px; height:1px; background:var(--gold); vertical-align:middle; margin-right:12px;}
+@media(max-width:640px){ .hero-meta{margin-top:38px; letter-spacing:.16em;} }
+
+/* ===== FOOTER — closing invitation ===== */
+.gfoot{position:relative; overflow:hidden; border-top:1px solid var(--line); padding:14vh 6vw 0; text-align:center;
+  background:radial-gradient(ellipse 70% 55% at 50% 0%, color-mix(in srgb, var(--gold) 11%, transparent), transparent 70%), var(--bg);}
+.gf-invite{position:relative; z-index:2; max-width:760px; margin:0 auto; display:flex; flex-direction:column; align-items:center;
+  opacity:0; transform:translateY(28px); transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1);}
+.gfoot.is-in .gf-invite{opacity:1; transform:none;}
+.gf-eyebrow{font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); margin-bottom:26px; display:inline-flex; align-items:center; gap:14px;}
+.gf-eyebrow::before,.gf-eyebrow::after{content:""; width:34px; height:1px; background:var(--gold); opacity:.7;}
+.gf-invite h2{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(2.3rem,7vw,5rem); line-height:1.04; letter-spacing:-.015em; margin:0 0 38px;}
+.gf-invite h2 em{font-style:italic; font-weight:400; color:var(--gold);}
+.gf-cta{position:relative; display:inline-flex; align-items:center; gap:14px; padding:18px 34px; border:1px solid color-mix(in srgb, var(--gold) 60%, transparent);
+  color:var(--ink); text-decoration:none; font-size:12px; letter-spacing:.22em; text-transform:uppercase; overflow:hidden; isolation:isolate;
+  transition:color .45s ease, border-color .45s ease;}
+.gf-cta::before{content:""; position:absolute; inset:0; background:var(--gold); transform:scaleY(0); transform-origin:bottom; transition:transform .5s cubic-bezier(.2,.7,.2,1); z-index:-1;}
+.gf-cta:hover{color:#1a140d; border-color:var(--gold);}
+.gf-cta:hover::before{transform:scaleY(1);}
+.gf-cta i{font-style:normal; transition:transform .4s ease;}
+.gf-cta:hover i{transform:translate(4px,-4px);}
+.gf-note{margin:26px 0 0; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-faint);}
+.gf-divider{position:relative; z-index:2; display:flex; align-items:center; justify-content:center; gap:18px; max-width:980px; margin:12vh auto 34px; color:var(--gold);}
+.gf-divider span{flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--line) 30%, var(--line) 70%, transparent);}
+.gf-divider b{font-weight:400; font-size:12px;}
+.gf-nav{position:relative; z-index:2; display:flex; flex-wrap:wrap; justify-content:center; gap:14px 38px;}
+.gf-nav a{font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-dim); text-decoration:none; position:relative; padding:4px 0; transition:color .3s ease;}
+.gf-nav a::after{content:""; position:absolute; left:50%; right:50%; bottom:-2px; height:1px; background:var(--gold); transition:left .35s ease, right .35s ease;}
+.gf-nav a:hover{color:var(--gold);}
+.gf-nav a:hover::after{left:0; right:0;}
+.gf-nav .sep{width:1px; height:12px; background:var(--line); align-self:center;}
+.gf-mark{position:relative; z-index:1; margin:6vh 0 -.2em; font-family:'Playfair Display',serif; font-weight:500; line-height:.86; letter-spacing:.08em;
+  font-size:clamp(7rem,30vw,24rem); color:transparent; -webkit-text-stroke:1px color-mix(in srgb, var(--gold) 42%, transparent); user-select:none; pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 92%); mask-image:linear-gradient(180deg,#000 30%,transparent 92%);
+  transform:translateY(8%); opacity:0; transition:opacity 1.6s ease .2s, transform 1.6s cubic-bezier(.2,.7,.2,1) .2s;}
+.gfoot.is-in .gf-mark{opacity:1; transform:translateY(0);}
+.gf-bottom{position:absolute; z-index:3; left:6vw; right:6vw; bottom:26px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+  font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint);}
+.gf-top{width:44px; height:44px; border-radius:50%; border:1px solid var(--line); display:inline-flex; align-items:center; justify-content:center;
+  color:var(--ink-dim); text-decoration:none; font-size:15px; transition:border-color .3s ease, color .3s ease, transform .3s ease;}
+.gf-top:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-3px);}
+@media(max-width:640px){
+  .gfoot{padding-top:10vh;} .gf-cta{padding:16px 22px; letter-spacing:.14em; font-size:11px;} .gf-nav{gap:12px 24px;} .gf-nav .sep{display:none;}
+  .gf-bottom{flex-direction:column-reverse; gap:12px; text-align:center; left:5vw; right:5vw; bottom:18px;}
+  .gf-mark{margin-bottom:56px;}
+}
+@media (prefers-reduced-motion: reduce){ .gf-invite,.gf-mark{transition:none; opacity:1; transform:none;} }
+
+/* ===== SELECTED WORK — creative mosaic (desktop) / snap carousel (mobile) ===== */
+.work-grid{display:grid; grid-template-columns:repeat(12,1fr); grid-auto-rows:15vw; grid-auto-flow:dense; gap:16px;
+  max-width:1500px; margin:0 auto; padding:4vh 6vw 12vh;}
+.work-card{position:relative; overflow:hidden; border-radius:2px; background:var(--panel); text-decoration:none; color:inherit;
+  opacity:0; transform:translateY(30px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease;}
+.work-card.is-visible{opacity:1; transform:translateY(0);}
+.work-card:hover{box-shadow:0 24px 50px -20px rgba(0,0,0,.45);}
+.wc-media{position:absolute; inset:0;}
+.wc-media img{width:100%; height:100%; object-fit:cover; transform:scale(1.08); transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.work-card:hover .wc-media img{transform:scale(1.16);}
+.wc-media .mono{width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif;
+  font-size:3rem; opacity:.55; background:color-mix(in srgb, var(--accent) 26%, var(--panel)); color:var(--accent);}
+.work-card::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 38%, rgba(10,9,7,.85) 100%); z-index:1;}
+.wc-num{position:absolute; top:16px; left:18px; z-index:2; font-family:'Playfair Display',serif; font-size:.9rem; letter-spacing:.04em; color:#f4efe4; opacity:.85;}
+.wc-body{position:absolute; left:0; right:0; bottom:0; z-index:2; padding:20px 22px; transform:translateY(6px); transition:transform .4s ease;}
+.work-card:hover .wc-body{transform:translateY(0);}
+.wc-cat{display:block; font-size:9.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-bottom:6px;}
+.wc-body h3{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(1rem,1.7vw,1.4rem); margin:0 0 3px; color:#fff; letter-spacing:-.005em;}
+.wc-body p{margin:0; font-size:10.5px; letter-spacing:.05em; color:rgba(244,239,228,.65);}
+.wc-cta{display:inline-flex; align-items:center; gap:7px; margin-top:12px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#fff;
+  opacity:0; transform:translateY(6px); transition:opacity .35s ease, transform .35s ease;}
+.work-card:hover .wc-cta{opacity:1; transform:translateY(0);}
+.wc-cta i{font-style:normal; transition:transform .3s ease;}
+.work-card:hover .wc-cta i{transform:translate(3px,-3px);}
+.work-card::before{content:""; position:absolute; left:22px; right:22px; bottom:0; height:2px; background:var(--gold); z-index:2;
+  transform:scaleX(0); transform-origin:left; transition:transform .45s cubic-bezier(.2,.7,.2,1);}
+.work-card:hover::before{transform:scaleX(1);}
+
+/* desktop: when one project is hovered, the rest recede — a quiet focus effect */
+@media (hover:hover) and (min-width:901px){
+  .work-grid:hover .work-card.is-visible:not(:hover){opacity:.6; filter:saturate(.8);}
+  .work-card{transition:opacity .5s ease, transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease, filter .5s ease;}
+}
+
+/* ===== SELECTED WORK on phones & tablets — a creative collage, not a carousel ===== */
+@media(max-width:900px){
+  .work-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:40vw; gap:10px; padding:3vh 5vw 9vh;}
+  .work-card{grid-column:span 1 !important; grid-row:span 1 !important;}
+  .work-card:nth-child(9n+1){grid-column:span 2 !important; grid-row:span 2 !important;}
+  .work-card:nth-child(9n+2){grid-row:span 2 !important;}
+  .work-card:nth-child(9n+5){grid-column:span 2 !important;}
+  .work-card:nth-child(9n+6){grid-row:span 2 !important;}
+  .work-card:nth-child(9n+9){grid-column:span 2 !important;}
+  .work-card:nth-child(even){transition-delay:.08s;}
+  .wc-num{top:12px; left:13px; font-size:.8rem;}
+  .wc-body{padding:13px 14px 15px;}
+  .wc-cat{font-size:8.5px; margin-bottom:4px;}
+  .wc-body h3{font-size:.98rem; line-height:1.2; margin:0;}
+  .wc-body p,.wc-cta{display:none;}
+  /* the three wide tiles carry the full caption */
+  .work-card:nth-child(9n+1) .wc-body,.work-card:nth-child(9n+5) .wc-body,.work-card:nth-child(9n+9) .wc-body{padding:20px 20px 22px;}
+  .work-card:nth-child(9n+1) .wc-body h3,.work-card:nth-child(9n+5) .wc-body h3,.work-card:nth-child(9n+9) .wc-body h3{font-size:1.45rem; margin-bottom:4px;}
+  .work-card:nth-child(9n+1) .wc-body p,.work-card:nth-child(9n+5) .wc-body p,.work-card:nth-child(9n+9) .wc-body p{display:block;}
+  .work-card:nth-child(9n+1) .wc-cta,.work-card:nth-child(9n+5) .wc-cta,.work-card:nth-child(9n+9) .wc-cta{display:inline-flex; opacity:1; transform:none;}
+}
+
+/* ===== THE DETAILS — ambient dual-row drifting marquee, not a grid, not a carousel ===== */
+.collage{border-top:1px solid var(--line); padding:12vh 0; overflow:hidden; position:relative;}
+.collage::before,.collage::after{content:""; position:absolute; top:0; bottom:0; width:10vw; z-index:3; pointer-events:none;}
+.collage::before{left:0; background:linear-gradient(90deg, var(--bg), transparent);}
+.collage::after{right:0; background:linear-gradient(270deg, var(--bg), transparent);}
+.collage-head{max-width:1500px; margin:0 auto; padding:0 6vw 6vh; text-align:center; position:relative; z-index:4;}
+.collage-head .sec-kicker{justify-content:center; display:flex; align-items:center;}
+.collage-head .sec-kicker::before{margin-right:12px;}
+.collage-head .sec-kicker::after{content:""; display:inline-block; width:28px; height:1px; background:var(--gold); vertical-align:middle; margin-left:12px;}
+.collage-head h2{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(1.8rem,4.4vw,3rem); margin:0; letter-spacing:-.01em;}
+.collage-strip{display:flex; flex-direction:column; gap:16px; opacity:0; transition:opacity 1s ease;}
+.collage-strip.is-in{opacity:1;}
+.drift-row{display:flex; gap:16px; width:max-content; will-change:transform;}
+.drift-row.rtl{animation:driftL 46s linear infinite;}
+.drift-row.ltr{animation:driftR 38s linear infinite;}
+.collage-strip:hover .drift-row{animation-play-state:paused;}
+@keyframes driftL{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+@keyframes driftR{from{transform:translateX(-50%);} to{transform:translateX(0);}}
+.c-frame{position:relative; flex:0 0 auto; width:300px; aspect-ratio:4/3; overflow:hidden; background:var(--panel);
+  transform:rotate(var(--tilt,0deg)) translateY(var(--lift,0));
+  transition:transform .4s ease, box-shadow .4s ease; box-shadow:0 0 0 rgba(0,0,0,0);}
+.drift-row:nth-child(2) .c-frame{aspect-ratio:3/4; width:230px;}
+.c-frame:hover{transform:rotate(0deg) translateY(var(--lift,0)) scale(1.05); z-index:5; box-shadow:0 22px 40px -16px rgba(0,0,0,.55);}
+.c-frame .cf-img{width:100%; height:100%;}
+.c-frame .cf-img img{width:100%; height:100%; object-fit:cover; filter:saturate(.94) contrast(1.02); -webkit-user-drag:none;}
+.c-frame .cf-img .mono{width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif;
+  font-size:2rem; opacity:.5; background:color-mix(in srgb, var(--accent) 24%, var(--panel)); color:var(--accent);}
+.c-frame::after{content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,9,7,.72), transparent 50%); opacity:0; transition:opacity .35s ease;}
+.c-frame:hover::after{opacity:1;}
+.c-frame .cf-cap{position:absolute; left:12px; right:12px; bottom:10px; font-family:'Playfair Display',serif; font-style:italic; font-size:11.5px;
+  color:#f4efe4; letter-spacing:.01em; opacity:0; transform:translateY(6px); transition:opacity .35s ease, transform .35s ease;}
+.c-frame:hover .cf-cap{opacity:1; transform:translateY(0);}
+@media(max-width:900px){
+  .c-frame{width:62vw;} .drift-row:nth-child(2) .c-frame{width:48vw;}
+  .drift-row.rtl{animation-duration:30s;} .drift-row.ltr{animation-duration:26s;}
+  .c-frame .cf-cap{opacity:1; transform:none;}
+  .collage::before,.collage::after{width:6vw;}
+}
+@media (prefers-reduced-motion: reduce){ .drift-row{animation:none !important;} }
+/* ===== FULL GALLERY — dissolve morph, after Method ===== */
+.full-gallery{position:relative; height:100svh; min-height:520px; overflow:hidden; background:#000; border-top:1px solid var(--line);}
+.full-gallery canvas{position:absolute; inset:0; width:100%; height:100%; display:block;}
+.fg-fallback{position:absolute; inset:0; display:none;}
+.fg-fallback img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:opacity .7s ease;}
+.fg-scrim{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.55) 0%, transparent 28%, transparent 62%, rgba(0,0,0,.75) 100%); pointer-events:none; z-index:2;}
+.fg-head{position:absolute; left:6vw; top:7vh; z-index:3; max-width:60ch;}
+.fg-head .sec-kicker{color:var(--gold);}
+.fg-head h2{font-family:'Playfair Display',serif; font-weight:500; color:#f4efe4; font-size:clamp(1.8rem,4.6vw,3rem); margin:0; letter-spacing:-.01em;}
+.fg-arrow{position:absolute; top:50%; transform:translateY(-50%); z-index:4; width:46px; height:46px; border-radius:50%;
+  border:1px solid rgba(244,239,228,.3); background:rgba(0,0,0,.25); backdrop-filter:blur(6px); color:#f4efe4; font-size:1.4rem;
+  cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .3s ease, border-color .3s ease;}
+.fg-arrow:hover{background:rgba(0,0,0,.5); border-color:var(--gold);}
+.fg-prev{left:5vw;} .fg-next{right:5vw;}
+.fg-thumbs{position:absolute; left:0; right:0; bottom:26px; z-index:3; display:flex; gap:10px; justify-content:center; padding:0 6vw;
+  overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;}
+.fg-thumbs::-webkit-scrollbar{display:none;}
+.fg-thumb{flex:0 0 auto; width:66px; height:44px; padding:0; border:2px solid transparent; background:none; border-radius:2px; overflow:hidden;
+  cursor:pointer; opacity:.55; transition:opacity .3s ease, border-color .3s ease;}
+.fg-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+.fg-thumb.active{opacity:1; border-color:var(--gold);}
+@media(max-width:640px){
+  .fg-head{left:6vw; top:6vh;} .fg-arrow{width:38px; height:38px; font-size:1.15rem;} .fg-prev{left:4vw;} .fg-next{right:4vw;}
+  .fg-thumb{width:52px; height:36px;}
+}
+/* ===== PROJECT DETAIL — narrative flow, matched to the reference video ===== */
+.vb{max-width:980px; margin:0 auto; padding:4vh 0 10vh;}
+.vb-text{max-width:560px; margin:0 auto; padding:34px 24px 38px; text-align:center;}
+.vb-text.intro{padding-top:30px;}
+.vb-text p{margin:0; font-size:clamp(15px,.9rem + .25vw,18px); line-height:1.55; font-weight:400;}
+.vb-p1{color:var(--ink);}
+.vb-p2{color:var(--ink-faint);}
+.vb-text.intro .vb-p2{color:var(--ink-dim);}
+.vb-dash{display:block; width:11px; height:1px; background:var(--ink-faint); margin:11px auto; opacity:.85;}
+.vb-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; margin:-1px; padding:0; border:0;}
+.vb-group{display:grid; gap:3px; margin-top:3px;}
+.vb-group:first-child{margin-top:0;}
+.vb-group.g1{grid-template-columns:1fr; max-width:760px; margin-left:auto; margin-right:auto;}
+.vb-group.g2{grid-template-columns:repeat(2,1fr);}
+.vb-group.g3{grid-template-columns:repeat(3,1fr);}
+.vb-group.g4{grid-template-columns:repeat(4,1fr);}
+.vb-tile{position:relative; overflow:hidden; background:var(--bg-2); cursor:zoom-in; aspect-ratio:3/4;}
+.vb-group.g3 .vb-tile{aspect-ratio:4/5;}
+.vb-group.g1 .vb-tile{aspect-ratio:auto;}
+.vb-group.g1 .vb-tile.is-ph{aspect-ratio:4/5;}
+.vb-tile img{display:block; width:100%; height:100%; object-fit:cover; transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.vb-group.g1 .vb-tile img{height:auto; object-fit:initial;}
+.vb-tile:hover img{transform:scale(1.03);}
+.vb-tile.crop img{transform:scale(var(--cz,1.7)); transform-origin:var(--co,50% 50%);}
+.vb-tile.crop:hover img{transform:scale(calc(var(--cz,1.7) + .06));}
+.vb-tile .ph{width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:2rem; opacity:.5;}
+.vb-reveal{opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);}
+.vb-reveal.is-visible{opacity:1; transform:none;}
+@media(max-width:640px){
+  .vb{padding-top:2vh;}
+  .vb-group.g1{max-width:none;}
+  .vb-text{padding:30px 22px 34px;}
+}
+@media (prefers-reduced-motion: reduce){ .vb-reveal{opacity:1; transform:none; transition:none;} }
 </style>
 </head>
 <body>
@@ -284,11 +496,14 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
 </header>
 
 <section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-mark" aria-hidden="true">GAD</div>
   <div class="hero-inner" id="heroInner">
     <div class="kicker">Interior Design — Selected Works, 2026</div>
     <h1 id="heroTitle">One idea,<br>fully resolved.</h1>
     <p>Nine interiors, residential and hospitality — each built around a single material decision and carried through to the smallest fixture. No trend, no clutter, no unfinished corner.</p>
     <a class="hero-btn" href="#work">View Selected Work <span>↓</span></a>
+    <div class="hero-meta"><span><b>09</b> Projects</span><span>Residential</span><span>Hospitality</span><span>Commercial</span></div>
   </div>
 </section>
 
@@ -301,7 +516,15 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
   </div>
   <span id="countTag"></span>
 </div>
-<div class="proj-list" id="grid"></div>
+<div class="work-grid" id="grid"></div>
+
+<section class="collage" id="moments">
+  <div class="collage-head">
+    <span class="sec-kicker">The Details</span>
+    <h2>Where the craft shows.</h2>
+  </div>
+  <div class="collage-strip" id="collageStrip"></div>
+</section>
 
 <section class="page-section" id="approach">
   <div class="inner">
@@ -354,6 +577,16 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
   </div>
 </section>
 
+<section class="full-gallery" id="visualGallery" tabindex="0" aria-label="Full-screen project gallery">
+  <canvas id="fgCanvas" aria-hidden="true"></canvas>
+  <div class="fg-fallback" id="fgFallback" aria-hidden="true"></div>
+  <div class="fg-scrim"></div>
+  <div class="fg-head"><span class="sec-kicker">The Gallery</span><h2>Every room, in full.</h2></div>
+  <button type="button" class="fg-arrow fg-prev" id="fgPrev" aria-label="Previous image">‹</button>
+  <button type="button" class="fg-arrow fg-next" id="fgNext" aria-label="Next image">›</button>
+  <div class="fg-thumbs" id="fgThumbs"></div>
+</section>
+
 <section class="page-section" id="contact">
   <div class="inner">
     <span class="sec-kicker">Contact</span>
@@ -363,25 +596,29 @@ footer.site{border-top:1px solid var(--line); padding:8vh 6vw 5vh; display:grid;
   </div>
 </section>
 
-<footer class="site">
-  <div class="f-col f-brand">
-    <span class="mark" style="font-family:'Playfair Display',serif; font-size:19px; letter-spacing:.06em; color:var(--ink);">GAD</span>
-    <p>Residential &amp; hospitality interiors — designed around one idea, carried through to the smallest fixture.</p>
+<footer class="gfoot" id="footer">
+  <div class="gf-invite">
+    <span class="gf-eyebrow">Let's begin</span>
+    <h2>A space worth<br><em>returning to.</em></h2>
+    <a class="gf-cta" href="mailto:hello@gad.design"><span>hello@gad.design</span><i>↗</i></a>
+    <p class="gf-note">Residential · Hospitality · Commercial — Cairo &amp; Riyadh</p>
   </div>
-  <div class="f-col">
-    <span class="f-head">Navigate</span>
+  <div class="gf-divider"><span></span><b>✦</b><span></span></div>
+  <nav class="gf-nav">
     <a href="#top">Home</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
-  </div>
-  <div class="f-col">
-    <span class="f-head">Contact</span>
-    <a href="mailto:hello@gad.design">hello@gad.design</a>
-    <span class="f-muted">Cairo &amp; Riyadh — by appointment</span>
-  </div>
-  <div class="f-bottom">
+    <i class="sep"></i><a href="#">Instagram</a><a href="#">LinkedIn</a>
+  </nav>
+  <div class="gf-mark" aria-hidden="true">GAD</div>
+  <div class="gf-bottom">
     <span>© 2026 GAD — Interior Design &amp; Architecture Portfolio</span>
-    <a href="#top" style="color:inherit; text-decoration:none;">Back to top ↑</a>
+    <a class="gf-top" href="#top" aria-label="Back to top">↑</a>
   </div>
 </footer>
+<script>
+(function(){var f=document.getElementById("footer");if(!f)return;
+if(!("IntersectionObserver" in window)){f.classList.add("is-in");return;}
+new IntersectionObserver(function(e,o){e.forEach(function(x){if(x.isIntersecting){f.classList.add("is-in");o.disconnect();}});},{threshold:.18}).observe(f);})();
+</script>
 
 <div id="detail">
   <div class="d-nav">
@@ -422,65 +659,83 @@ const projects = [
     type:"Hospitality Interior",
     intro:"A warmly lit cafe centered on a red mosaic feature wall, with intimate banquette seating, patterned tile, and small tables arranged for conversation.",
     sections:[
-      {n:"01", h:"A Bold First Impression", p:"A red mosaic wall and sculptural brass pendants establish the cafe's identity, balanced by dark wood and low, warm lighting."},
-      {n:"02", h:"Dining &amp; Conversation", p:"A long upholstered banquette anchors the room while compact tables and cane-backed chairs create flexible seating throughout."},
-      {n:"03", h:"Layered Materials", p:"Patterned floor tile, polished tabletops, textured upholstery, and reflective mosaic bring depth and warmth to the dining space."}
+      {n:"01", h:"A Bold First Impression", p:"A red mosaic wall and sculptural brass pendants establish the cafe's identity, balanced by dark wood and low, warm lighting.", p2:"Dark wood and low, warm lighting keep the red from overwhelming the room, so it reads as depth rather than volume."},
+      {n:"02", h:"Dining &amp; Conversation", p:"A long upholstered banquette anchors the room while compact tables and cane-backed chairs create flexible seating throughout.", p2:"Tables and chairs can be regrouped from couples to larger parties without the room losing its rhythm."},
+      {n:"03", h:"Layered Materials", p:"Patterned floor tile, polished tabletops, textured upholstery, and reflective mosaic bring depth and warmth to the dining space.", p2:"Each material catches the light differently, so the room changes character from morning service to evening."},
+      {n:"04", h:"Light &amp; Detail", p:"Sculptural brass pendants, textured upholstery, and small decorative touches add depth while keeping the room clean and composed.", p2:"The result is a cafe that feels intimate by day and quietly theatrical by evening."},
+      {n:"05", h:"The Experience", p:"From the entrance to the last table, the route is designed to feel effortless for guests and efficient for the team.", p2:"Every detail supports the daily rhythm of service while keeping the character of the room intact."}
     ]},
   {id:"bathroom", cat:"Bathroom", title:"Sculpted in Stone", tag:"Ensuite Bath",
     intro:"Wet and dry share one room without sharing one mood — a book-matched marble wall separates them without a single door.",
     sections:[
-      {n:"01", h:"Concept", p:"The shower sits behind glass, half a shade darker than the rest of the room, so it reads as a room within the room, not an afterthought."},
-      {n:"02", h:"Materials", p:"Honed travertine, a brushed-brass tapware set, and one long mirror that doubles the light from the single window."},
-      {n:"03", h:"Result", p:"The freestanding tub sits slightly off-center — close enough to the window to catch the evening light, far enough from the door to stay private."}
+      {n:"01", h:"Concept", p:"The shower sits behind glass, half a shade darker than the rest of the room, so it reads as a room within the room, not an afterthought.", p2:"Glass keeps the room open while the darker tone gives the wet zone its own quiet presence."},
+      {n:"02", h:"Materials", p:"Honed travertine, a brushed-brass tapware set, and one long mirror that doubles the light from the single window.", p2:"Warm metal against cool stone keeps the palette restrained and the surfaces easy to read."},
+      {n:"03", h:"Result", p:"The freestanding tub sits slightly off-center — close enough to the window to catch the evening light, far enough from the door to stay private.", p2:"From the bath, the window frames the view; from the door, the tub stays softly out of sight."},
+      {n:"04", h:"Light &amp; Detail", p:"A single window, a long mirror, and a few warm metal accents are all the room needs to feel layered.", p2:"The result is a bath that feels calm in the morning and quietly luxurious at night."},
+      {n:"05", h:"Daily Ritual", p:"Storage, towels, and fittings sit exactly where the hand expects them, so the routine stays effortless.", p2:"Every detail serves the daily ritual while keeping the surfaces calm and uncluttered."}
     ]},
   {id:"majlis", cat:"Majlis", title:"The Long Table of Conversation", tag:"Traditional Majlis",
     intro:"Perimeter seating is the oldest idea in the room — we kept it, and gave it a modern hand: lower profiles, darker timber, brass that's allowed to tarnish.",
     sections:[
-      {n:"01", h:"Concept", p:"Every seat faces the center, the way a majlis always has; the difference is in what surrounds it."},
-      {n:"02", h:"Materials", p:"Hand-loomed wool, blackened oak, and brass trim left to darken with use rather than polished against it."},
-      {n:"03", h:"Atmosphere", p:"Light stays low and warm past sunset — no overhead fixture competes with conversation."}
+      {n:"01", h:"Concept", p:"Every seat faces the center, the way a majlis always has; the difference is in what surrounds it.", p2:"Low seating lines the walls so conversation moves across the room rather than along it."},
+      {n:"02", h:"Materials", p:"Hand-loomed wool, blackened oak, and brass trim left to darken with use rather than polished against it.", p2:"Each material is meant to age gracefully, gaining character with years of use."},
+      {n:"03", h:"Atmosphere", p:"Light stays low and warm past sunset — no overhead fixture competes with conversation.", p2:"Warm pools of light at seat height keep the focus on the people, not the ceiling."},
+      {n:"04", h:"Light &amp; Detail", p:"Brass lanterns, hand-loomed rugs, and a few carefully chosen objects build warmth without crowding the room.", p2:"The result is a majlis that feels rooted in tradition and entirely at ease in the present."},
+      {n:"05", h:"Hosting", p:"The room is organized for hosting: easy circulation for service, clear sightlines between guests, and storage kept out of view.", p2:"Every detail supports the rhythm of a long evening of conversation."}
     ]},
   {id:"reception", cat:"Reception", title:"The First Ninety Seconds", tag:"Entrance &amp; Reception",
     intro:"A guest decides how a building feels within the first ninety seconds of arriving. This room is built entirely around that window.",
     sections:[
-      {n:"01", h:"Concept", p:"One material — a single stone wall — carries the whole story, so nothing else needs to compete for attention."},
-      {n:"02", h:"Flow", p:"The desk sits off the direct sightline from the door; guests see the room before they see where to check in."},
-      {n:"03", h:"Lighting", p:"A wash of light along the stone wall does more work than any fixture aimed at a face."}
+      {n:"01", h:"Concept", p:"One material — a single stone wall — carries the whole story, so nothing else needs to compete for attention.", p2:"Everything else in the room is deliberately quiet, so the stone wall is the first and last thing remembered."},
+      {n:"02", h:"Flow", p:"The desk sits off the direct sightline from the door; guests see the room before they see where to check in.", p2:"A clear route from the door to the desk means no one needs to ask where to go."},
+      {n:"03", h:"Lighting", p:"A wash of light along the stone wall does more work than any fixture aimed at a face.", p2:"Indirect light lifts the texture of the wall while keeping faces and the desk comfortably soft."},
+      {n:"04", h:"Light &amp; Detail", p:"Sculptural lighting and a restrained palette let the stone wall carry the room while the desk stays quietly functional.", p2:"The result is an arrival that feels confident, composed, and unmistakably considered."},
+      {n:"05", h:"Daily Use", p:"The desk, waiting area, and circulation are planned around real traffic, so the room works as well when busy as when quiet.", p2:"Every detail supports the people who work here as much as those who arrive."}
     ]},
   {id:"restaurant", cat:"Restaurant", title:"Table Height", tag:"Dining Interior",
     intro:"Everything above eye level stays warm and soft; everything below the table stays cool and hard-wearing. Guests only ever notice the first half.",
     sections:[
-      {n:"01", h:"Concept", p:"Banquettes line the perimeter, freeing the floor for service without narrowing a single aisle."},
-      {n:"02", h:"Materials", p:"A timber ceiling grid sits above a honed stone floor — warmth overhead, durability underfoot."},
-      {n:"03", h:"Lighting", p:"Pendant clusters bring light down to the plate, leaving the ceiling in soft shadow on purpose."}
+      {n:"01", h:"Concept", p:"Banquettes line the perimeter, freeing the floor for service without narrowing a single aisle.", p2:"A clear central aisle lets service move freely while every table keeps its own corner."},
+      {n:"02", h:"Materials", p:"A timber ceiling grid sits above a honed stone floor — warmth overhead, durability underfoot.", p2:"The contrast keeps the room warm to the eye and forgiving to a busy service floor."},
+      {n:"03", h:"Lighting", p:"Pendant clusters bring light down to the plate, leaving the ceiling in soft shadow on purpose.", p2:"Each table gets its own pool of light, so the room feels intimate even when full."},
+      {n:"04", h:"Light &amp; Detail", p:"Pendants, banquette upholstery, and table settings are tuned to one warm range so the room reads as a single atmosphere.", p2:"The result is a dining room that invites guests to stay a little longer."},
+      {n:"05", h:"Service", p:"The kitchen pass, the floor, and the entrance are connected by clear routes, so service stays smooth even when every table is full.", p2:"Every detail supports the rhythm of the evening, from the first greeting to the last course."}
     ]},
   {id:"gym", cat:"Gym", title:"Discipline, Finished Properly", tag:"Home Gym",
     intro:"Most home gyms are an afterthought bolted onto a garage. This one was drawn on the same plan as the bedroom next to it.",
     sections:[
-      {n:"01", h:"Concept", p:"Rubber flooring and a full mirror wall sit inside the same oak language used through the rest of the home — the room never feels borrowed."},
-      {n:"02", h:"Ventilation &amp; Light", p:"Full-height glazing and a dedicated air exchange mean the room works the same at 7am and 7pm."},
-      {n:"03", h:"Storage", p:"Equipment disappears into joinery between sessions — the room resets in under a minute."}
+      {n:"01", h:"Concept", p:"Rubber flooring and a full mirror wall sit inside the same oak language used through the rest of the home — the room never feels borrowed.", p2:"Warm timber and soft light make the training space feel like part of the home, not an annex."},
+      {n:"02", h:"Ventilation &amp; Light", p:"Full-height glazing and a dedicated air exchange mean the room works the same at 7am and 7pm.", p2:"Fresh air and daylight are built into the room, so it never feels like a closed box."},
+      {n:"03", h:"Storage", p:"Equipment disappears into joinery between sessions — the room resets in under a minute.", p2:"Mats, weights and bands live behind flush doors, leaving a calm room once the session ends."},
+      {n:"04", h:"Light &amp; Detail", p:"Warm lighting, mirrors, and a few considered materials keep the room energizing without feeling clinical.", p2:"The result is a training space that is as inviting at six in the morning as it is at night."},
+      {n:"05", h:"Routine", p:"Equipment, mats, and towels each have a place, so setting up and resetting the room takes moments.", p2:"Every detail supports consistency, because the easier a room is to use, the more often it is used."}
     ]},
   {id:"gaming", cat:"Gaming", title:"Built for the Long Session", tag:"Gaming Lounge",
     intro:"Not an arcade — a room tuned for four hours at a time. Acoustics and light were designed before a single screen was chosen.",
     sections:[
-      {n:"01", h:"Concept", p:"Felt-lined wall panels absorb sound without deadening the room, so long sessions stay comfortable rather than fatiguing."},
-      {n:"02", h:"Layout", p:"Seating pivots between a single chair for focus and a low sofa for company, without rearranging a thing."},
-      {n:"03", h:"Materials", p:"Matte, dark surfaces everywhere a screen might reflect — nothing competes with what's on-screen."}
+      {n:"01", h:"Concept", p:"Felt-lined wall panels absorb sound without deadening the room, so long sessions stay comfortable rather than fatiguing.", p2:"The room stays quiet for the neighbors and clear for voices, however loud the session gets."},
+      {n:"02", h:"Layout", p:"Seating pivots between a single chair for focus and a low sofa for company, without rearranging a thing.", p2:"Sight lines to the screen stay clean from every seat, whether playing alone or together."},
+      {n:"03", h:"Materials", p:"Matte, dark surfaces everywhere a screen might reflect — nothing competes with what's on-screen.", p2:"Low-sheen finishes keep reflections off the screens and the eyes rested through long sessions."},
+      {n:"04", h:"Light &amp; Detail", p:"Indirect lighting, matte surfaces, and a restrained palette keep attention on the screen and off the room.", p2:"The result is a space built for focus first and comfort throughout."},
+      {n:"05", h:"Comfort", p:"Cable runs, seating height, and ventilation are planned around long sessions, so nothing distracts from the game.", p2:"Every detail supports hours of play without strain."}
     ]},
   {id:"discovery", cat:"Discovery", title:"A Room for Looking Slowly", tag:"Curated Display",
     intro:"Built around what's displayed, not what's stored — a room for objects that deserve more than a shelf.",
     sections:[
-      {n:"01", h:"Concept", p:"Each niche is lit on its own circuit, independent of the room, so a single piece can hold its own moment."},
-      {n:"02", h:"Materials", p:"A plaster-and-stone shell stays neutral on purpose — every material decision defers to what's inside the cases."},
-      {n:"03", h:"Flow", p:"One path runs through the room — not because guests can't wander, but because the sequence was designed on purpose."}
+      {n:"01", h:"Concept", p:"Each niche is lit on its own circuit, independent of the room, so a single piece can hold its own moment.", p2:"Light is aimed at the objects, never at the viewer, so each piece is seen on its own terms."},
+      {n:"02", h:"Materials", p:"A plaster-and-stone shell stays neutral on purpose — every material decision defers to what's inside the cases.", p2:"Texture comes from the stone and plaster alone, leaving color to the collection."},
+      {n:"03", h:"Flow", p:"One path runs through the room — not because guests can't wander, but because the sequence was designed on purpose.", p2:"The route slows the visitor down, one display at a time, and ends in a clear final view."},
+      {n:"04", h:"Light &amp; Detail", p:"Controlled light, quiet materials, and generous spacing give each object room to be seen properly.", p2:"The result is a room that rewards patience and slow looking."},
+      {n:"05", h:"Experience", p:"Seating, labels, and circulation are planned so visitors can linger without ever feeling guided.", p2:"Every detail supports curiosity, one display at a time."}
     ]},
   {id:"kitchen", cat:"Kitchen", title:"The Working Wall", tag:"Kitchen &amp; Pantry",
     intro:"A kitchen organized around one long working wall, so cooking, storage, and cleanup never cross paths.",
     sections:[
-      {n:"01", h:"Layout", p:"Prep, cook, and clean sit in a single line along one wall; the island stays clear for everything else — guests included."},
-      {n:"02", h:"Materials", p:"Honed stone counters, brushed brass hardware, and full-height oak cabinetry that runs floor to ceiling without a visible seam."},
-      {n:"03", h:"Detail", p:"A hidden pantry behind one cabinet face keeps the working wall permanently clear."}
+      {n:"01", h:"Layout", p:"Prep, cook, and clean sit in a single line along one wall; the island stays clear for everything else — guests included.", p2:"Working in a single line keeps the routine quick and leaves the rest of the room calm."},
+      {n:"02", h:"Materials", p:"Honed stone counters, brushed brass hardware, and full-height oak cabinetry that runs floor to ceiling without a visible seam.", p2:"Continuous surfaces keep the wall clean to look at and simple to maintain."},
+      {n:"03", h:"Detail", p:"A hidden pantry behind one cabinet face keeps the working wall permanently clear.", p2:"With the pantry hidden, the kitchen reads as furniture rather than equipment."},
+      {n:"04", h:"Light &amp; Detail", p:"Under-cabinet lighting, warm metals, and a single statement surface lift the working wall without adding clutter.", p2:"The result is a kitchen that looks composed even in the middle of cooking."},
+      {n:"05", h:"Daily Use", p:"Drawers, appliances, and bins are placed by how often they are reached for, so the routine feels natural.", p2:"Every detail supports daily life, from the first coffee to the last wash-up."}
     ]}
 ];
 
@@ -502,23 +757,61 @@ projects.forEach((p,i)=>{
 const grid = document.getElementById("grid");
 document.getElementById("countTag").textContent = projects.length + " Projects";
 
+/* asymmetric mosaic rhythm — [colSpan, rowSpan] out of a 12-col / 15vw-row grid, cycled with grid-auto-flow:dense */
+const mosaicSpans = [[7,2],[5,2],[4,1],[4,1],[4,1],[6,2],[6,1],[6,1],[12,1]];
+
 grid.innerHTML = projects.map((p,i)=>{
   const num = String(i+1).padStart(2,"0");
+  const accent = palette[i%palette.length];
+  const [cs,rs] = mosaicSpans[i%mosaicSpans.length];
   const art = p.hero
     ? `<img src="${p.hero}" alt="${p.title}" loading="lazy">`
-    : `<div class="mono" style="background:color-mix(in srgb, ${palette[i%palette.length]} 24%, var(--panel)); color:${palette[i%palette.length]};">${p.cat[0]}</div>`;
-  return `<a class="proj-row" href="#/project/${p.id}">
-    <span class="proj-num">${num}</span>
-    <div class="proj-thumb">${art}</div>
-    <div class="proj-info">
-      <h3>Project ${num} — ${p.title}</h3>
+    : `<div class="mono">${p.cat[0]}</div>`;
+  return `<a class="work-card" href="#/project/${p.id}" style="--accent:${accent}; grid-column:span ${cs}; grid-row:span ${rs};">
+    <div class="wc-media">${art}</div>
+    <span class="wc-num">${num}</span>
+    <div class="wc-body">
+      <span class="wc-cat">${p.cat}</span>
+      <h3>${p.title}</h3>
       <p>${p.type} · ${p.year}</p>
+      <span class="wc-cta">View Case Study <i>↗</i></span>
     </div>
-    <span class="proj-link">View Case Study <i>↗</i></span>
   </a>`;
 }).join("");
 
 /* marquee ticker — mixes categories with brand statements, seamless loop */
+/* THE DETAILS — two rows of photos drifting past each other, opposite directions, never stopping */
+(function(){
+  const strip = document.getElementById("collageStrip");
+  if(!strip) return;
+  let pool = [];
+  projects.forEach((p,pi)=>{
+    (p.images||[]).forEach(im=>{
+      if(im.src) pool.push({src:im.src, cap:`${p.title} — ${im.cap.split("— ")[1]||im.cap}`, accent:palette[pi%palette.length], letter:p.cat[0]});
+    });
+  });
+  if(pool.length < 4){
+    projects.forEach((p,pi)=>{ if(!pool.some(f=>f.letter===p.cat[0])) pool.push({src:null, cap:p.title, accent:palette[pi%palette.length], letter:p.cat[0]}); });
+  }
+  const tilts = [-3,2,-1.5,3,-2.5,1.5,-3.5,2.5];
+  const lifts = [0,10,-6,14,-4,8,-8,6];
+  const frameHTML = (f,i)=>{
+    const img = f.src ? `<img src="${f.src}" alt="${f.cap}" loading="lazy">` : `<div class="mono" style="--accent:${f.accent}">${f.letter}</div>`;
+    return `<figure class="c-frame" style="--tilt:${tilts[i%tilts.length]}deg; --lift:${lifts[i%lifts.length]}px;">
+      <div class="cf-img">${img}</div><figcaption class="cf-cap">${f.cap}</figcaption></figure>`;
+  };
+  const rowA = pool.filter((_,i)=> i%2===0);
+  const rowB = pool.filter((_,i)=> i%2===1);
+  const build = row => (row.length?row:pool).map(frameHTML).join("");
+  /* each row's content is duplicated once so a 50% translateX loops seamlessly */
+  strip.innerHTML =
+    `<div class="drift-row rtl">${build(rowA)}${build(rowA)}</div>
+     <div class="drift-row ltr">${build(rowB.length?rowB:rowA.slice().reverse())}${build(rowB.length?rowB:rowA.slice().reverse())}</div>`;
+  if("IntersectionObserver" in window){
+    new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){strip.classList.add("is-in"); o.disconnect();}})},{threshold:.15}).observe(strip);
+  } else { strip.classList.add("is-in"); }
+})();
+
 const tickItems = ["One Idea, Fully Resolved","Interiors Designed to Last","Book a Consultation","Residential &amp; Hospitality Design","Every Room, Considered Slowly","Cairo &amp; Riyadh — By Appointment","Let's Design Your Space","Crafted Around Light, Not Clutter"];
 const tickLoop = tickItems.join(" <em>&#10022;</em> ") + " <em>&#10022;</em> ";
 document.getElementById("tickTrack").innerHTML = `<span>${tickLoop}</span>`.repeat(2);
@@ -550,6 +843,41 @@ function renderDetail(id){
   const next = projects[(idx+1)%projects.length];
   dCount.textContent = (idx+1) + " / " + projects.length;
   const accent = palette[idx%palette.length];
+
+  /* ---- narrative flow, matched to the reference video ----
+     centered text (white line, tiny dash, muted line) → edge-to-edge image groups of 1 / 2 / 3 / 4 */
+  const flowImgs = [];
+  const real0 = (p.images||[]).filter(im=>im.src);
+  let real = real0.filter(im=>im.src!==p.hero);
+  if(!real.length) real = real0;
+  const phMode = real0.length===0;
+  const origins = ["28% 32%","72% 38%","50% 74%","24% 70%","76% 66%","50% 26%"];
+  let ri = 0, cropN = 0;
+  const tileHTML = (im, crop, single)=>{
+    const n = flowImgs.length;
+    flowImgs.push({src: im?im.src:null, cap: p.title+" — view "+(n+1)});
+    if(!(im && im.src)){
+      return `<div class="vb-tile is-ph" data-i="${n}"><div class="ph" style="color:${accent};background:color-mix(in srgb, ${accent} 16%, var(--panel));">${p.cat[0]}</div></div>`;
+    }
+    const st = crop ? ` style="--co:${origins[(cropN++)%origins.length]}; --cz:${single?1.3:1.7}"` : "";
+    return `<div class="vb-tile${crop?" crop":""}"${st} data-i="${n}"><img src="${im.src}" alt="${p.title} — ${crop?"detail":"view"} ${n+1}" loading="lazy"></div>`;
+  };
+  /* one row of 1 / 2 / 3 / 4 tiles; once every photo has been used, the rest are re-framed close-ups of them */
+  const group = size=>{
+    const tiles = [];
+    for(let k=0;k<size;k++){
+      if(phMode) tiles.push(tileHTML(null));
+      else if(ri < real.length) tiles.push(tileHTML(real[ri++], false, size===1));
+      else tiles.push(tileHTML(real[(cropN*2+1)%real.length], true, size===1));
+    }
+    return `<div class="vb-group g${size} vb-reveal">${tiles.join("")}</div>`;
+  };
+  const textBlock = s=>`<div class="vb-text vb-reveal"><h2 class="vb-sr">${s.h}</h2><p class="vb-p1">${s.p}</p>${s.p2 ? `<i class="vb-dash"></i><p class="vb-p2">${s.p2}</p>` : ""}</div>`;
+  /* the video, in order: line · single · text · duo · text · duo · text · duo + trio · text · single + quad · text · single */
+  let flow = `<div class="vb-text vb-reveal intro"><i class="vb-dash"></i><p class="vb-p2">${p.intro}</p></div>` + group(1);
+  const plan = [[2],[2],[2,3],[1,4],[1]];
+  p.sections.forEach((s,si)=>{ flow += textBlock(s) + (plan[si]||[2]).map(n=>group(n)).join(""); });
+  if(!phMode){ let more = real.length - ri; while(more > 0){ const n = Math.min(4, more); flow += group(n); more -= n; } }
   detailContent.innerHTML = `
     <div class="d-hero" style="--accent:${accent}">
       <div class="kicker">${String(idx+1).padStart(2,"0")} — ${p.cat}</div>
@@ -565,40 +893,16 @@ function renderDetail(id){
       <div><span class="num">Year</span><p>${p.year}</p></div>
       <div><span class="num">Area</span><p>${p.area}</p></div>
     </div>
-    <div class="d-sections">
-      <div class="d-section"><div class="l"></div><div class="b"><p style="font-size:1.15rem;color:var(--ink);">${p.intro}</p></div></div>
-      ${p.sections.map((s,si)=>{
-        const capTemplates = ["Plan &amp; Layout — replace with your drawing.","Materials Detail — replace with your photo.","Final Visualization — replace with your render."];
-        return `
-      <div class="d-section">
-        <div class="l"><span class="num">${s.n}</span><h2>${s.h}</h2></div>
-        <div class="b">
-          <p>${s.p}</p>
-          <div class="d-img"><div class="ph" style="color:${accent};background:color-mix(in srgb, ${accent} 16%, var(--panel));">${p.cat[0]}</div></div>
-          <p class="d-cap">${capTemplates[si] || "Detail — replace with your photo."}</p>
-        </div>
-      </div>`;}).join("")}
-    </div>
-    <div class="d-gallery">
-      <div class="g-head"><span class="num">${p.sections.length ? String(p.sections.length+1).padStart(2,"0") : "02"} — Visualizations</span><h2>Visual Case Study</h2><span class="g-count">${p.images.length} Images</span></div>
-      <div class="g-grid" id="gGrid"></div>
-    </div>
+    <div class="vb">${flow}</div>
     <a class="d-next" href="#/project/${next.id}">
       <span>Next Project — ${next.cat}</span>
       <h3>${next.title} ↗</h3>
     </a>
   `;
-  const gGrid = document.getElementById("gGrid");
-  gGrid.innerHTML = p.images.map((im,i)=>{
-    const inner = im.src
-      ? `<img src="${im.src}" alt="${im.cap}" loading="lazy">`
-      : `<div class="ph" style="color:${accent};background:color-mix(in srgb, ${accent} 18%, var(--panel));">${p.cat[0]}</div>`;
-    return `<div class="g-item ${im.wide?'wide':''}" data-i="${i}">${inner}<span class="cap">${im.cap}</span></div>`;
-  }).join("");
-  currentGallery = p.images;
+  currentGallery = flowImgs;
   currentProject = p;
-  gGrid.querySelectorAll(".g-item").forEach(el=>{
-    el.addEventListener("click", ()=> openLightbox(parseInt(el.dataset.i)));
+  detailContent.querySelectorAll(".vb-tile").forEach(el=>{
+    el.addEventListener("click", ()=> openLightbox(parseInt(el.dataset.i,10)));
   });
   detail.scrollTop = 0;
   splitReveal(document.getElementById("dTitle"), 150);
@@ -631,7 +935,7 @@ function observeReveal(){
   io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("is-visible"); io.unobserve(e.target);} });
   }, {threshold:.14, rootMargin:"0px 0px -60px 0px"});
-  document.querySelectorAll(".proj-row, .d-section, .g-item, .page-section .inner").forEach(el=>io.observe(el));
+  document.querySelectorAll(".work-card, .d-section, .d-spread, .g-item, .vb-reveal, .page-section .inner").forEach(el=>io.observe(el));
 }
 observeReveal();
 
@@ -692,6 +996,159 @@ window.addEventListener("keydown", e=>{
   if(e.key==="ArrowLeft") stepLB(-1);
   if(e.key==="ArrowRight") stepLB(1);
 });
+
+/* ===== FULL GALLERY — vanilla port of the dissolve/morph gallery, no React ===== */
+(function(){
+  const canvas = document.getElementById("fgCanvas");
+  const section = document.getElementById("visualGallery");
+  if(!canvas || !section) return;
+
+  let fgItems = [];
+  projects.forEach(p=>{ (p.images||[]).forEach(im=>{ if(im.src) fgItems.push({src:im.src, alt:(p.title+" — "+im.cap)}); }); });
+  if(fgItems.length < 2){ section.style.display = "none"; return; }
+
+  const thumbsEl = document.getElementById("fgThumbs");
+  const fallbackEl = document.getElementById("fgFallback");
+  thumbsEl.innerHTML = fgItems.map((it,i)=>
+    `<button type="button" class="fg-thumb${i===0?' active':''}" data-i="${i}" aria-label="Show ${it.alt}"><img src="${it.src}" alt="" loading="lazy"></button>`
+  ).join("");
+  function setActiveThumb(i){
+    [...thumbsEl.children].forEach((el,idx)=>el.classList.toggle("active", idx===i));
+    const el = thumbsEl.children[i];
+    if(el) el.scrollIntoView({inline:"center", behavior:"smooth", block:"nearest"});
+  }
+
+  const wrapIdx = (i,n)=> ((i%n)+n)%n;
+  const easeQuint = t=>{ t=Math.min(Math.max(t,0),1); return t<0.5 ? 16*Math.pow(t,5) : 1-Math.pow(-2*t+2,5)/2; };
+
+  const VERT = `attribute vec2 a_position; varying vec2 v_uv;
+    void main(){ v_uv = a_position*0.5+0.5; gl_Position = vec4(a_position,0.0,1.0); }`;
+  const FRAG = `precision highp float;
+    uniform sampler2D u_from; uniform sampler2D u_to; uniform float u_progress; uniform vec2 u_resolution;
+    uniform float u_fromAspect; uniform float u_toAspect; uniform float u_scale; uniform float u_direction;
+    uniform float u_edge; uniform float u_drift; varying vec2 v_uv;
+    vec3 permute(vec3 x){ return mod(((x*34.0)+1.0)*x,289.0); }
+    float snoise(vec2 v){
+      const vec4 C = vec4(0.211324865405187,0.366025403784439,-0.577350269189626,0.024390243902439);
+      vec2 i = floor(v + dot(v,C.yy)); vec2 x0 = v - i + dot(i,C.xx);
+      vec2 i1 = (x0.x > x0.y) ? vec2(1.0,0.0) : vec2(0.0,1.0);
+      vec4 x12 = x0.xyxy + C.xxzz; x12.xy -= i1; i = mod(i,289.0);
+      vec3 p = permute(permute(i.y+vec3(0.0,i1.y,1.0))+i.x+vec3(0.0,i1.x,1.0));
+      vec3 m = max(0.5 - vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.0); m=m*m; m=m*m;
+      vec3 x = 2.0*fract(p*C.www)-1.0; vec3 h = abs(x)-0.5; vec3 ox = floor(x+0.5); vec3 a0 = x-ox;
+      m *= 1.79284291400159 - 0.85373472095314*(a0*a0+h*h);
+      vec3 g; g.x = a0.x*x0.x + h.x*x0.y; g.yz = a0.yz*x12.xz + h.yz*x12.yw;
+      return 130.0*dot(m,g);
+    }
+    float fbm(vec2 v){ float value=0.0; float amp=0.5; for(int i=0;i<5;i++){ value += amp*snoise(v); v*=2.0; amp*=0.5; } return value; }
+    vec2 mirror(vec2 uv){ return 1.0 - abs(1.0 - mod(uv,2.0)); }
+    vec2 coverUV(vec2 uv, float imgAspect){
+      float canvasAspect = u_resolution.x/u_resolution.y;
+      vec2 scale = (canvasAspect > imgAspect) ? vec2(1.0, imgAspect/canvasAspect) : vec2(canvasAspect/imgAspect, 1.0);
+      return mirror((uv-0.5)*scale+0.5);
+    }
+    void main(){
+      float adjusted = u_progress*(1.0+2.0*u_edge) - u_edge;
+      float noise = fbm(v_uv*u_scale + vec2(0.0, u_progress*u_direction))*0.5+0.5;
+      noise = smoothstep(0.0, 2.0, length(texture2D(u_to, coverUV(v_uv,u_toAspect)).rgb) + noise);
+      float mixFactor = 1.0 - smoothstep(adjusted-u_edge, adjusted+u_edge, noise);
+      vec2 fromUV = coverUV(v_uv + vec2(0.0, noise*u_progress*u_drift*u_direction), u_fromAspect);
+      vec2 toUV = coverUV(v_uv + vec2(0.0, noise*(1.0-u_progress)*-0.5*u_drift*u_direction), u_toAspect);
+      gl_FragColor = mix(texture2D(u_from, fromUV), texture2D(u_to, toUV), mixFactor);
+    }`;
+
+  function compileShader(gl,type,src){ const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s);
+    if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)){ gl.deleteShader(s); throw new Error("shader compile failed"); } return s; }
+  function linkProgram(gl,vs,fs){ const v=compileShader(gl,gl.VERTEX_SHADER,vs), f=compileShader(gl,gl.FRAGMENT_SHADER,fs);
+    const p=gl.createProgram(); gl.attachShader(p,v); gl.attachShader(p,f); gl.linkProgram(p); gl.deleteShader(v); gl.deleteShader(f);
+    if(!gl.getProgramParameter(p,gl.LINK_STATUS)){ gl.deleteProgram(p); throw new Error("program link failed"); } return p; }
+  function loadImg(src){ return new Promise((res,rej)=>{ const img=new Image(); img.decoding="async";
+    img.onload=()=>res(img); img.onerror=()=>rej(new Error("img load failed")); img.src=src; }); }
+
+  let gl, program, uniforms={}, textures=[], aspects=[], raf=0, failed=false, active=0;
+  let from=0, to=0, progress=1, startedAt=0, direction=1;
+
+  function showFallback(){
+    canvas.style.display="none"; fallbackEl.style.display="block";
+    fallbackEl.innerHTML = fgItems.map((it,i)=>`<img src="${it.src}" alt="${it.alt}" style="opacity:${i===active?1:0}">`).join("");
+  }
+  function updateFallback(){ if(!failed) return; [...fallbackEl.children].forEach((img,i)=>img.style.opacity = i===active?1:0); }
+
+  function requestTransition(next){
+    const n = fgItems.length, wrapped = wrapIdx(next,n);
+    if(wrapped===active) return;
+    direction = (((wrapped-active+n)%n)*2 <= n) ? 1 : -1;
+    from=active; to=wrapped; progress=0; startedAt=performance.now(); active=wrapped;
+    setActiveThumb(active); updateFallback();
+  }
+
+  function pick(i){ return textures[i] || textures.find(t=>t) || null; }
+  function resize(){
+    const dpr=Math.min(window.devicePixelRatio||1,2), w=Math.round(canvas.clientWidth*dpr), h=Math.round(canvas.clientHeight*dpr);
+    if(w===0||h===0||(canvas.width===w&&canvas.height===h)) return;
+    canvas.width=w; canvas.height=h; gl.viewport(0,0,w,h);
+  }
+  function draw(){
+    if(failed) return;
+    if(progress<1) progress = easeQuint((performance.now()-startedAt)/1500);
+    const fromTex=pick(from), toTex=pick(to);
+    if(fromTex && toTex){
+      gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, fromTex); gl.uniform1i(uniforms.from,0);
+      gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, toTex); gl.uniform1i(uniforms.to,1);
+      gl.uniform1f(uniforms.progress, progress);
+      gl.uniform2f(uniforms.resolution, canvas.width, canvas.height);
+      gl.uniform1f(uniforms.fromAspect, aspects[from]||1);
+      gl.uniform1f(uniforms.toAspect, aspects[to]||1);
+      gl.uniform1f(uniforms.scale, 3.5);
+      gl.uniform1f(uniforms.direction, direction);
+      gl.uniform1f(uniforms.edge, 0.15);
+      gl.uniform1f(uniforms.drift, 0.5);
+      gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+    }
+    raf = requestAnimationFrame(draw);
+  }
+
+  async function start(){
+    try{
+      gl = canvas.getContext("webgl",{alpha:false, antialias:false}) || canvas.getContext("experimental-webgl");
+      if(!gl) throw new Error("no webgl");
+      program = linkProgram(gl, VERT, FRAG); gl.useProgram(program);
+      const buffer = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+      const loc = gl.getAttribLocation(program,"a_position"); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+      ["from","to","progress","resolution","fromAspect","toAspect","scale","direction","edge","drift"].forEach(n=>{ uniforms[n]=gl.getUniformLocation(program,"u_"+n); });
+      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+      textures = fgItems.map(()=>null); aspects = fgItems.map(()=>1);
+      resize(); new ResizeObserver(resize).observe(canvas);
+      let started=false, refused=0;
+      await Promise.all(fgItems.map((item,i)=> loadImg(item.src).then(img=>{
+        const tex=gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, tex);
+        gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE, img);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+        textures[i]=tex; aspects[i]=img.naturalWidth/Math.max(img.naturalHeight,1);
+        if(!started){ started=true; raf=requestAnimationFrame(draw); }
+      },()=>{ refused++; if(refused===fgItems.length) throw new Error("all images failed"); })));
+    } catch(e){ failed=true; showFallback(); }
+  }
+  start();
+
+  document.getElementById("fgPrev").addEventListener("click", ()=>requestTransition(active-1));
+  document.getElementById("fgNext").addEventListener("click", ()=>requestTransition(active+1));
+  thumbsEl.addEventListener("click", e=>{ const b=e.target.closest(".fg-thumb"); if(b) requestTransition(parseInt(b.dataset.i,10)); });
+  let swipeX=null;
+  section.addEventListener("pointerdown", e=>{ swipeX=e.clientX; });
+  section.addEventListener("pointerup", e=>{ if(swipeX===null) return; const dx=e.clientX-swipeX; swipeX=null; if(Math.abs(dx)>48) requestTransition(active + (dx<0?1:-1)); });
+  section.addEventListener("keydown", e=>{ if(e.key==="ArrowLeft") requestTransition(active-1); if(e.key==="ArrowRight") requestTransition(active+1); });
+  let galleryInView=false;
+  new IntersectionObserver(entries=>{ galleryInView=entries[0].isIntersecting; }).observe(section);
+  setInterval(()=>{
+    if(galleryInView && !document.hidden && !section.matches(":hover") && !section.contains(document.activeElement) &&
+       !window.matchMedia("(prefers-reduced-motion: reduce)").matches) requestTransition(active+1);
+  },5000);
+})();
 </script>
 </body>
 </html>
